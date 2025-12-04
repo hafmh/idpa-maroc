@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IDPA MAROC - Importateur Distributeur de Pièces Automobiles de qualité au Maroc">
+    <meta name="keywords" content="pièces automobiles, IDPA, Maroc, Tétouan, pièces auto">
+    <title>IDPA MAROC - Importateur Distributeur Pièces Automobiles</title>
+    
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ========== HEADER - MENU DE NAVIGATION ========== -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="images/logo-idpa.png" alt="IDPA Maroc Logo" class="logo-img">
+                <span class="logo-text"> IDPA MAROC</span>
+            </div>
+            
+            <!-- Menu hamburger pour mobile -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Liens de navigation -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#a-propos">À Propos</a></li>
+                <li><a href="#avantages">Avantages</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="cart-icon" id="cartIcon">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== SECTION HERO - BANNIÈRE PRINCIPALE ========== -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>IDPA MAROC</h1>
+            <h2>Importateur Distributeur Pièces Automobiles</h2>
+            <p>Votre partenaire de confiance pour toutes vos pièces automobiles au Maroc</p>
+            <div class="hero-buttons">
+                <a href="#produits" class="btn">Découvrir nos produits</a>
+                <a href="#contact" class="btn btn-secondary">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION PRODUITS ========== -->
+    <section id="produits">
+        <h2>Nos Catégories de Produits</h2>
+        <p class="section-subtitle">Une large gamme de pièces automobiles de qualité</p>
+        
+        <!-- Categories Navigation -->
+        <div class="categories-nav">
+            <button class="category-btn active" data-category="tous">Tous les Produits</button>
+            <button class="category-btn" data-category="carrosserie">🚗 Carrosserie</button>
+            <button class="category-btn" data-category="moteur">⚙️ Moteur</button>
+            <button class="category-btn" data-category="eclairage">💡 Éclairage</button>
+            <button class="category-btn" data-category="autres">🔧 Autres</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- ========== SECTION À PROPOS ========== -->
+    <section id="a-propos">
+        <h2>À Propos d'IDPA MAROC</h2>
+        <p class="section-subtitle">Votre partenaire de confiance depuis des années</p>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    <strong>IDPA MAROC</strong> est un importateur et distributeur spécialisé dans les pièces automobiles de haute qualité. Nous nous engageons à fournir à nos clients des produits fiables et durables pour tous types de véhicules.
+                </p>
+                <p>
+                    Notre expertise et notre réseau de fournisseurs internationaux nous permettent d'offrir une gamme complète de pièces détachées aux meilleurs prix du marché marocain.
+                </p>
+                <p>
+                    Basés à <strong>Casablanca</strong>, nous desservons l'ensemble du territoire marocain avec un service de livraison rapide et efficace.
+                </p>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-box fade-in">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Pièces en stock</div>
+                </div>
+                <div class="stat-box fade-in">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Clients satisfaits</div>
+                </div>
+                <div class="stat-box fade-in">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Marques disponibles</div>
+                </div>
+                <div class="stat-box fade-in">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Service client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION AVANTAGES ========== -->
+    <section id="avantages">
+        <h2>Pourquoi Choisir IDPA MAROC ?</h2>
+        <p class="section-subtitle">Nos engagements envers vous</p>
+        
+        <div class="advantages">
+            <div class="advantage fade-in">
+                <div class="advantage-icon">✓</div>
+                <h3>Qualité Garantie</h3>
+                <p>Toutes nos pièces sont certifiées et testées selon les normes internationales</p>
+            </div>
+            
+            <div class="advantage fade-in">
+                <div class="advantage-icon">🚚</div>
+                <h3>Livraison Rapide</h3>
+                <p>Livraison dans tout le Maroc sous 24-48h selon votre localisation</p>
+            </div>
+            
+            <div class="advantage fade-in">
+                <div class="advantage-icon">💰</div>
+                <h3>Prix Compétitifs</h3>
+                <p>Les meilleurs rapports qualité-prix du marché marocain</p>
+            </div>
+            
+            <div class="advantage fade-in">
+                <div class="advantage-icon">👥</div>
+                <h3>Service Client</h3>
+                <p>Une équipe d'experts à votre écoute pour vous conseiller</p>
+            </div>
+            
+            <div class="advantage fade-in">
+                <div class="advantage-icon">🔄</div>
+                <h3>Échange Facile</h3>
+                <p>Politique d'échange et de retour simplifiée sous 15 jours</p>
+            </div>
+            
+            <div class="advantage fade-in">
+                <div class="advantage-icon">🎯</div>
+                <h3>Stock Important</h3>
+                <p>Plus de 5000 références disponibles immédiatement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION CONTACT ========== -->
+    <section id="contact">
+        <h2>Contactez-Nous</h2>
+        <p class="section-subtitle">Nous sommes là pour répondre à toutes vos questions</p>
+        
+        <div class="contact-container">
+            <!-- Informations de contact -->
+            <div class="contact-info fade-in">
+                <h3>Informations de Contact</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Adresse</strong><br>
+                        Casablanca, Casablanca-Settat<br>
+                        Maroc
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>Téléphone</strong><br>
+                        +212 628591775
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        contact@idpamaroc.ma<br>
+                        info@idpamaroc.ma
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div>
+                        <strong>Horaires</strong><br>
+                        Lun - Sam: 9h00 - 19h00<br>
+                        Dimanche: Fermé
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Facebook">F</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                    <a href="#" class="social-icon" title="WhatsApp">💬</a>
+                </div>
+            </div>
+
+            <!-- Formulaire de contact -->
+            <div class="contact-form fade-in">
+                <h3>Envoyez-nous un message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required placeholder="+212 6XX-XXXXXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <select id="sujet" name="sujet">
+                            <option value="">Sélectionnez un sujet</option>
+                            <option value="demande-devis">Demande de devis</option>
+                            <option value="information-produit">Information sur un produit</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CART MODAL ========== -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Mon Panier</h2>
+                <span class="close-cart" id="closeCart">×</span>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <p>Total: <span class="cart-total-amount" id="cartTotal">0 DH</span></p>
+                <button class="btn checkout-btn" id="checkoutBtn">Commander</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <!-- Section 1 -->
+            <div class="footer-section">
+                <h3>IDPA MAROC</h3>
+                <p>Importateur et distributeur de pièces automobiles de qualité au Maroc depuis des années.</p>
+                <p>Votre satisfaction est notre priorité.</p>
+            </div>
+            
+            <!-- Section 2 -->
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <div class="footer-links">
+                    <a href="#accueil">Accueil</a>
+                    <a href="#produits">Nos Produits</a>
+                    <a href="#a-propos">À Propos</a>
+                    <a href="#avantages">Nos Avantages</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            
+            <!-- Section 3 -->
+            <div class="footer-section">
+                <h3>Nos Services</h3>
+                <div class="footer-links">
+                    <a href="#">Vente en gros</a>
+                    <a href="#">Vente au détail</a>
+                    <a href="#">Livraison rapide</a>
+                    <a href="#">Conseil technique</a>
+                    <a href="#">SAV</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IDPA MAROC - Tous droits réservés</p>
+            <p>Développé pour IDPA MAROC</p>
+        </div>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- MODAL PAIEMENT SIMULÉ -->
+<div class="payment-modal" id="paymentModal">
+    <div class="payment-content">
+        <div class="payment-header">
+            <h2>Paiement Sécurisé</h2>
+            <span class="close-payment" id="closePayment">×</span>
+        </div>
+        
+        <div class="payment-body">
+            <div class="payment-summary">
+                <h3>Récapitulatif de la commande</h3>
+                <div id="paymentSummary"></div>
+                <div class="payment-total">Total : <strong id="paymentTotalAmount">0 DH</strong></div>
+            </div>
+
+            <form id="fakePaymentForm">
+                <div class="form-group">
+                    <label>Numéro de carte (test)</label>
+                    <input type="text" value="4242 4242 4242 4242" readonly style="background:#f0f0f0;">
+                    <small>Utilise 4242 4242 4242 4242 → paiement accepté<br>
+                           >Any future date → OK<br>Any 3 digits → CVV OK</small>
+                </div>
+
+                <div style="display:flex;gap:15px;">
+                    <div class="form-group" style="flex:1;">
+                        <label>Date d'expiration</label>
+                        <input type="text" id="expiry" placeholder="MM/AA" required>
+                    </div>
+                    <div class="form-group" style="width:100px;">
+                        <label>CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Nom sur la carte</label>
+                    <input type="text" placeholder="MOHAMMED ALAOUI" required>
+                </div>
+
+                <button type="submit" class="btn" id="payBtn">
+                    <span id="payText">Payer maintenant</span>
+                    <span id="payLoading" style="display:none;">Traitement en cours...</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- MODAL COMMANDE EXACTEMENT COMME TA PHOTO -->
+<div class="payment-modal" id="checkoutModal">
+    <div class="payment-content" style="max-width:500px;">
+        <div class="payment-header">
+            <h2>Finaliser votre commande</h2>
+            <span class="close-payment" onclick="document.getElementById('checkoutModal').classList.remove('active')">×</span>
+        </div>
+        <div class="payment-body">
+            <input type="text" id="customerName" placeholder="Nom complet *" required>
+            <input type="tel" id="customerPhone" placeholder="Téléphone * (+212 6..)" required>
+            <select id="customerCity" required>
+                <option value="">Choisir une ville</option>
+                <option>Casablanca</option>
+                <option>Rabat</option>
+                <option>Marrakech</option>
+                <option>Tanger</option>
+                <option>Agadir</option>
+                <option>Fès</option>
+                <option>Tétouan</option>
+                <option>Autre</option>
+            </select>
+            <textarea id="customerAddress" placeholder="Adresse complète (rue, quartier, immeuble...)" required></textarea>
+            
+            <div style="background:#f9f9f9;padding:1rem;margin:1rem 0;border-radius:8px;">
+                <strong>Total : <span id="finalTotal">0 DH</span></strong>
+            </div>
+            
+            <button class="btn" style="width:100%;padding:1.2rem;font-size:1.3rem;" onclick="sendOrder()">
+                ENVOYER VIA WHATSAPP
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

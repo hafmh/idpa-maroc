@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin IDPA MAROC</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    h1 { color: #DC143C; text-align: center; }
+    .form-group { margin: 15px 0; }
+    label { display: block; margin-bottom: 8px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; }
+    button { background: #DC143C; color: white; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 18px; margin-top: 20px; }
+    button:hover { background: #b00020; }
+    table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #DC143C; color: white; }
+    .delete-btn { background: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+    .success { color: green; font-weight: bold; text-align: center; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Administration IDPA MAROC</h1>
+    <p style="text-align:center;color:#666;">Ajoute, modifie ou supprime tes produits en 10 secondes</p>
+
+    <div class="success" id="message"></div>
+
+    <h2>Ajouter un nouveau produit</h2>
+    <div class="form-group">
+      <label>Nom du produit</label>
+      <input type="text" id="name" placeholder="ex: Pare-choc Avant Peugeot 308">
+    </div>
+    <div class="form-group">
+      <label>Catégorie</label>
+      <select id="category">
+        <option value="carrosserie">Carrosserie</option>
+        <option value="moteur">Moteur</option>
+        <option value="eclairage">Éclairage</option>
+        <option value="autres">Autres</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Prix (DH)</label>
+      <input type="number" id="price" placeholder="2500">
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea id="description" rows="3" placeholder="Compatible avec plusieurs modèles..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Image (chemin)</label>
+      <input type="text" id="image" value="images/products/" placeholder="images/products/pare-choc-avant.jpg">
+    </div>
+
+    <button onclick="addProduct()">Ajouter le produit</button>
+
+    <h2 style="margin-top:50px;">Liste des produits</h2>
+    <table id="productsTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Catégorie</th>
+          <th>Prix</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    function loadProducts() {
+      fetch('/api/products')
+        .then(r => r.json())
+        .then(products => {
+          const tbody = document.querySelector('#productsTable tbody');
+          tbody.innerHTML = products.map(p => `
+            <tr>
+              <td>${p.id}</td>
+              <td>${p.name}</td>
+              <td>${p.category}</td>
+              <td>${p.price} DH</td>
+              <td><img src="${p.image}" width="80" onerror="this.src='images/no-image.jpg'"></td>
+              <td><button class="delete-btn" onclick="deleteProduct(${p.id})">Supprimer</button></td>
+            </tr>
+          `).join('');
+        });
+    }
+
+    function addProduct() {
+      const product = {
+        name: document.getElementById('name').value,
+        category: document.getElementById('category').value,
+        price: parseInt(document.getElementById('price').value),
+        description: document.getElementById('description').value,
+        image: document.getElementById('image').value
+      };
+
+      fetch('/api/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(product)
+      })
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('message').innerText = "Produit ajouté avec succès !";
+        loadProducts();
+        document.querySelectorAll('input, textarea').forEach(i => i.value = '');
+        document.getElementById('image').value = 'images/products/';
+      });
+    }
+
+    function deleteProduct(id) {
+      if (confirm("Supprimer ce produit ?")) {
+        fetch(`/api/products/${id}`, { method: 'DELETE' })
+          .then(() => {
+            document.getElementById('message').innerText = "Produit supprimé !";
+            loadProducts();
+          });
+      }
+    }
+
+    // Charger les produits au démarrage
+    loadProducts();
+  </script>
+</body>
+</html>
